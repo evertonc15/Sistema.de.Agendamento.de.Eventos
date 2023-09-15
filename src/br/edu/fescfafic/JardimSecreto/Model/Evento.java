@@ -9,8 +9,9 @@ public class Evento {
     public String nomeEvento;
     public LocalDate dataEvento;
     public LocalTime horaEvento;
+
     public int capacidadeParticipantes;
-    public List<Calendario> participantesRegistrados;
+    public int[] capacidadePessoas =new int[100];
 
     //Construtor
 
@@ -19,12 +20,14 @@ public class Evento {
                   String nomeEvento,
                   LocalDate dataEvento,
                   LocalTime horaEvento,
+
                   int capacidadeParticipantes) {
 
         this.idEvento = idEvento;
         this.nomeEvento = nomeEvento;
         this.dataEvento = dataEvento;
         this.horaEvento = horaEvento;
+
         this.capacidadeParticipantes = capacidadeParticipantes;
 
     }
@@ -36,7 +39,7 @@ public class Evento {
         System.out.printf("Evento: %s %n", this.nomeEvento.toUpperCase());
         System.out.printf("Data: %s %n", this.dataEvento);
         System.out.printf("Hora: %s %n", this.horaEvento);
-        System.out.printf("Capacidade de participantes para este evento:%d pessoas.%n", this.capacidadeParticipantes);
+        System.out.printf("Capacidade de participantes para este evento:%d pessoas.%n", this.capacidadePessoas.length);
         System.out.println("====".repeat(15));
 
     }
