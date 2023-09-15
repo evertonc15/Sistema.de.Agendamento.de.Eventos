@@ -9,7 +9,7 @@ public class ReservaEspaco {
     public LocalDate dataDaReserva;
     public Evento localDoEvento;
 
-    public ReservaEspaco(Organizador nome, Evento nomeDoEvento, Evento idDoevento, LocalDate dataDaReserva, Evento localDoEvento ) {
+    public ReservaEspaco() {
         this.nome = nome;
         this.nomeDoEvento = nomeDoEvento;
         this.idDoevento = idDoevento;
