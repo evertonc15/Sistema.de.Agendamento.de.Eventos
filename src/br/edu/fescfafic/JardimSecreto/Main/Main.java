@@ -29,8 +29,9 @@ public class Main {
                 LocalDate.of(2023, 9, 25),
                 "Beach bar");
 
+        org1.exibirInfo();
+        evento.exibirInfo();
         reservaEspaco.exibirInfo();
-//        org1.exibirInfo();
 
 
     }

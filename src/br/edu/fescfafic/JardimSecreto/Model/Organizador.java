@@ -23,7 +23,7 @@ public class Organizador {
     }
 
     public void exibirInfo() {
-        System.out.println("== DADOS GERAIS ==");
+        System.out.println(" == DADOS GERAIS DO ORGANIZADOR ==");
         System.out.printf("Código: %d %n", this.idOrg);
         System.out.printf("Organizador(a): %s%n", this.nome);
         System.out.printf("E-mail: %s%n", this.email);
