@@ -1,5 +1,7 @@
 package br.edu.fescfafic.JardimSecreto.Main;
 import br.edu.fescfafic.JardimSecreto.Model.Evento;
+import br.edu.fescfafic.JardimSecreto.Model.Organizador;
+import br.edu.fescfafic.JardimSecreto.Model.Organizador;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -12,6 +14,13 @@ public class Main {
                 LocalTime.of(17,20),
                 "Cajazeiras"
         );
-        evento.exibirInfo();
+        //evento.exibirInfo();
+        Organizador o1 = new Organizador(
+                "Everton",
+                17,
+                "everton.ci@outlook.com"
+        );
+        o1.exibirInfo();
+        o1.adicionarEvento(evento);
     }
 }
