@@ -1,14 +1,16 @@
 package br.edu.fescfafic.JardimSecreto.Model;
+
 import java.time.LocalDate;
+import java.util.Scanner;
 
 public class Calendario {
-    public Evento[] agendamentosEventos = new Evento[5];
+    public Evento[] agendamentosEventos = new Evento[6];
 
     //Metodos
     public boolean verificarDisponibilidade(LocalDate dataEvento) {
         boolean disponivel = true;
         for (int i = 0; i < agendamentosEventos.length; i++) {
-            if (this.agendamentosEventos[i] != null && this.agendamentosEventos[i].dataEvento.equals(dataEvento)) {
+            if (agendamentosEventos[i] != null && agendamentosEventos[i].dataEvento.equals(dataEvento)) {
                 disponivel = false;
             }
         }
@@ -20,8 +22,9 @@ public class Calendario {
             //verifica se é nulo para evitar dados preenchidos
             if (agendamentosEventos[i] == null && this.verificarDisponibilidade(evento.dataEvento)) {
                 agendamentosEventos[i] = evento;
-                System.out.println("Evento inserido");
-                return;
+                //print de teste
+                System.out.printf("Evento %s inserido%n", evento.nomeEvento);
+                break;
             }
         }
     }
@@ -33,4 +36,25 @@ public class Calendario {
             }
         }
     }
+
+    public Evento cancelarEvento(Evento idCancelar) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Informe o código do evento que deseja cancelar: ");
+        int confirmarID = sc.nextInt();
+        for (int i = 0; i < agendamentosEventos.length; i++) {
+            if (agendamentosEventos[i]!=null&&agendamentosEventos[i].equals(idCancelar.idEvento)) {
+                agendamentosEventos[i] = null;
+                break;
+            }
+        }
+        System.out.printf("Evento %s excluído %n", idCancelar.idEvento);
+
+
+
+//        for(int i=0;i< agendamentosEventos.length;i++){
+//            if(agendamentosEventos[i]!=null&&)
+        return idCancelar;
+    }
+
 }
+
