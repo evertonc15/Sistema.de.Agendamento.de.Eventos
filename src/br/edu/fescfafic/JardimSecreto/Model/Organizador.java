@@ -1,5 +1,7 @@
 package br.edu.fescfafic.JardimSecreto.Model;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 import java.util.Random;
 
@@ -7,7 +9,8 @@ public class Organizador {
     public int idOrg;
     public String nome;
     public String email;
-    public List<Evento> eventosOrganizados;
+    public int[] quantEventosOrganizados = new int[5];
+
 
     //Construtor
 
@@ -30,4 +33,6 @@ public class Organizador {
         System.out.println("--".repeat(15));
 
     }
+
 }
+

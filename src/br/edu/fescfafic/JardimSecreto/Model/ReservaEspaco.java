@@ -1,23 +1,20 @@
 package br.edu.fescfafic.JardimSecreto.Model;
 
 import java.time.LocalDate;
-import java.util.Random;
-
 
 public class ReservaEspaco {
-    public int idReserva;
+    public Evento idReserva;
     public Organizador organizador;
     public Evento evento;
     public LocalDate dataReserva;
-    public String espacoReservado;
+    public Evento espacoReservado;
 
     //Construtor
 
-
-    public ReservaEspaco(int idReserva, Organizador organizador,
+    public ReservaEspaco(Evento idReserva, Organizador organizador,
                          Evento evento,
                          LocalDate dataReserva,
-                         String espacoReservado) {
+                         Evento espacoReservado) {
 
         this.idReserva = idReserva;
         this.organizador = organizador;
@@ -28,16 +25,14 @@ public class ReservaEspaco {
 
     //Metodos
     public void exibirInfo() {
-        Random rd = new Random();
-        int idRes = rd.nextInt(500);
-        this.idReserva = idRes;
+
         System.out.println("== DADOS DO ESPAÇO RESERVADO ==");
         System.out.println("-".repeat(30));
-        System.out.printf("Código da reserva: %d %n", this.idReserva);
+        System.out.printf("Código da reserva: %d %n", this.idReserva.idEvento);
         System.out.printf("Organizador responsável: %s %n", this.organizador.nome);
-        System.out.printf("Evento: %s %n", this.evento.nomeEvento);
-        System.out.printf("Data da reserva: %s %n", this.dataReserva.toString());
-        System.out.printf("Local do evento: %s %n", this.espacoReservado);
+        System.out.printf("Evento: %s %n", this.evento.nomeEvento.toUpperCase());
+        System.out.printf("Data da reserva: %s %n", this.dataReserva);
+        System.out.printf("Espaço: %s %n", this.espacoReservado.localEvento);
         System.out.println("=".repeat(30));
     }
 
