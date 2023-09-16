@@ -25,27 +25,27 @@ public class Main {
                 11,
                 "Kaue Batista",
                 "Swing House",
-                LocalDate.of(2003, 7, 7),
+                LocalDate.of(2013, 5, 7),
                 LocalTime.of(21, 10),
                 "Florianopolis",
                 10,
                 5
         );
         Evento evento3 = new Evento(
-                11,
+                16,
                 "Kaue Batista",
                 "Developers Night",
-                LocalDate.of(2003, 7, 7),
+                LocalDate.of(2053, 7, 5),
                 LocalTime.of(21, 10),
                 "Florianopolis",
                 10,
                 5
         );
         Evento evento4 = new Evento(
-                11,
-                "Kaue Batista",
+                21,
+                "Jose",
                 "Gamers Night",
-                LocalDate.of(2003, 7, 7),
+                LocalDate.of(2341, 7, 7),
                 LocalTime.of(21, 10),
                 "Florianopolis",
                 10,
@@ -80,8 +80,11 @@ public class Main {
         calendario.inserirEvento(evento1, organizador1);
         calendario.inserirEvento(evento2, organizador1);
         calendario.inserirEvento(evento3, organizador1);
-        calendario.inserirEvento(evento4, organizador1);
+        calendario.inserirEvento(evento4, organizador2);
+        calendario.cancelarEvento(organizador2, 21);
         calendario.exibirEventos();
+
+        calendario.verificarDisponibilidade();
 
 
 

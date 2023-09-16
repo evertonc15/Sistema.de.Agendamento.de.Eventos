@@ -34,7 +34,31 @@ public class Calendario {
 
     }
 
-    public void cancelarEvento(){
+    public void cancelarEvento(Organizador org, int id){
+        boolean eventoEncontrado = false;
+        for(int i = 0; i < quantidadeDeEventosAgendados; i++) {
+            if (id == eventosAgendados[i].idDoEvento && org.nomedoOrganizador.equalsIgnoreCase(eventosAgendados[i].organizadorDoEvento)) {
+                eventoEncontrado = true;
+                eventosAgendados[i] = null;
+                quantidadeDeEventosAgendados--;
+                for (int j = 0; j < org.quantidadDeEventosDoOrganizador; j++) {
+                    if(id == org.eventosOrganizados[j].idDoEvento) {
+                        org.eventosOrganizados[j] = null;
+                        org.quantidadDeEventosDoOrganizador--;
+                        System.out.print("\nEvento cancelado com sucesso");
+                    }
+                }
+            }
+        }
+        if(!eventoEncontrado){
+            System.out.print("Evento não encontrado, não podemos cancelar");
+        }
 
+    }
+
+    public void verificarDisponibilidade(){
+        for(int i = 0; i < quantidadeDeEventosAgendados; i++){
+            System.out.println("Data indisponivel - " + eventosAgendados[i].dataDoEvento);
+        }
     }
 }
