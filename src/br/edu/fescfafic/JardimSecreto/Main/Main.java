@@ -55,15 +55,14 @@ public class Main {
         cadastrar.inserirEvento(evento4);
         cadastrar.inserirEvento(evento5);
 //        cadastrar.cancelarEvento(evento);
-        System.out.println("===============================================");
+
         cadastrar.exibirInfo();
-        cadastrar.cancelarEvento(evento5);
+        cadastrar.cancelarEvento();
         cadastrar.exibirInfo();
 
 
 
-//        evento.exibirInfo();
-//        reservaEspaco.exibirInfo();
+
 
 
 

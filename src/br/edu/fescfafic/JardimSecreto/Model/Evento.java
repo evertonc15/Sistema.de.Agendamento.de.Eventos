@@ -14,6 +14,11 @@ public class Evento {
     public String[] eventos = new String[5];
     public int[] capacidadePessoas = new int[100];
 
+    //Gera códigos, ou IDs, aleatorios de 3 digitos
+    Random rd = new Random();
+    int idRand = rd.nextInt(300);
+
+
     //Construtor
     public Evento(
             String nomeEvento,
@@ -21,18 +26,16 @@ public class Evento {
             LocalTime horaEvento, String localEvento,
             int capacidadeParticipantes) {
 
+        this.idEvento = idRand;
         this.nomeEvento = nomeEvento;
         this.dataEvento = dataEvento;
         this.horaEvento = horaEvento;
         this.localEvento = localEvento;
         this.capacidadeParticipantes = capacidadeParticipantes;
-
     }
 
     public void exibirInfo() {
-        Random rd = new Random();
-        int idRand = rd.nextInt(300);
-        this.idEvento = idRand;
+
         System.out.println(" == DADOS GERAIS DO EVENTO ==");
         System.out.println("--".repeat(15));
         System.out.printf("Código: %d %n", this.idEvento);
@@ -41,6 +44,5 @@ public class Evento {
         System.out.printf("Hora: %s %n", this.horaEvento);
         System.out.printf("Capacidade: %d pessoas.%n", this.capacidadePessoas.length);
         System.out.println("==".repeat(15));
-
     }
 }

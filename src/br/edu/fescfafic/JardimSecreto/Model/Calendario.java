@@ -36,25 +36,25 @@ public class Calendario {
             }
         }
     }
-
-    public Evento cancelarEvento(Evento idCancelar) {
+    public Evento cancelarEvento() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Informe o código do evento que deseja cancelar: ");
         int confirmarID = sc.nextInt();
+        System.out.println();
         for (int i = 0; i < agendamentosEventos.length; i++) {
-            if (agendamentosEventos[i]!=null&&agendamentosEventos[i].equals(idCancelar.idEvento)) {
+            if (agendamentosEventos[i] != null && agendamentosEventos[i].idEvento == confirmarID) {
+                Evento excluido = agendamentosEventos[i];
                 agendamentosEventos[i] = null;
+                System.out.println("-----= EVENTO CANCELADO =-----");
+                System.out.printf("Tema do Evento: %s%n", excluido.nomeEvento);
+                System.out.printf("Data Cancelada: %s%n", excluido.dataEvento);
+                System.out.println("--".repeat(15));
                 break;
             }
         }
-        System.out.printf("Evento %s excluído %n", idCancelar.idEvento);
-
-
-
-//        for(int i=0;i< agendamentosEventos.length;i++){
-//            if(agendamentosEventos[i]!=null&&)
-        return idCancelar;
+        return null;
     }
-
 }
+
+
 
