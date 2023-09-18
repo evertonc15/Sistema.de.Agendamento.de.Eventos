@@ -12,7 +12,7 @@ public class ReservaEspaco  {
         this.espacoReservado = espacoReservado;
     }
     public void exibirInfo(){
-        System.out.printf("Organizador do Evento: %s",this.organizador);
+        System.out.printf("\nOrganizador do Evento: %s",this.organizador.nome);
         System.out.printf("\nEvento Reservado: %s", evento.nomeDoEvento);
         System.out.printf("\nData da reserva: %s", this.dataReserva);
         System.out.printf("\nLocal do Evento: %s", this.espacoReservado);
