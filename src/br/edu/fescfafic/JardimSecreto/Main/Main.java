@@ -1,4 +1,5 @@
 package br.edu.fescfafic.JardimSecreto.Main;
+import br.edu.fescfafic.JardimSecreto.Model.Calendario;
 import br.edu.fescfafic.JardimSecreto.Model.Evento;
 import br.edu.fescfafic.JardimSecreto.Model.Organizador;
 import br.edu.fescfafic.JardimSecreto.Model.Organizador;
@@ -21,6 +22,9 @@ public class Main {
                 "everton.ci@outlook.com"
         );
         o1.exibirInfo();
-        o1.adicionarEvento(evento);
+
+        Calendario calendario = new Calendario(2);
+        //calendario.inserirEvento(evento);
+        calendario.verificarDisponibilidade(evento);
     }
 }
