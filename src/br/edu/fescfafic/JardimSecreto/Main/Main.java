@@ -24,7 +24,10 @@ public class Main {
         o1.exibirInfo();
 
         Calendario calendario = new Calendario(2);
-        //calendario.inserirEvento(evento);
+        calendario.inserirEvento(evento);
+        calendario.verificarDisponibilidade(evento);
+        System.out.println("+++++++++++++++++++++");
+        calendario.cancelarEvento(evento);
         calendario.verificarDisponibilidade(evento);
     }
 }

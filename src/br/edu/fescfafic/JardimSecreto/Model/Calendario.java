@@ -1,8 +1,5 @@
 package br.edu.fescfafic.JardimSecreto.Model;
 
-
-import java.time.LocalDate;
-
 public class Calendario {
     public Evento[] listaDeEventosAgendados ;
     public int numEventosAgendados;
@@ -13,9 +10,9 @@ public class Calendario {
     }
     public void verificarDisponibilidade(Evento evento){
         boolean disponibilidade = false;
-       for (int i =0; i < listaDeEventosAgendados.length; i++){
+       for (int i = 0; i < listaDeEventosAgendados.length; i++){
            if (listaDeEventosAgendados[i] != null && listaDeEventosAgendados[i].dataDoEvento == evento.dataDoEvento){
-               System.out.println("Esta data esta indisponiel!");
+               System.out.println("\nEsta data esta indisponiel!");
                disponibilidade = true;
            }
        }if (!disponibilidade){
@@ -29,6 +26,15 @@ public class Calendario {
         }else {
             System.out.println("Calendario esta lotado!");
         }
+    }
+    public void cancelarEvento(Evento evento){
+        for (int i = 0; i < listaDeEventosAgendados.length; i++){
+            if (numEventosAgendados < listaDeEventosAgendados.length){
+                listaDeEventosAgendados[numEventosAgendados] = null;
+                numEventosAgendados--;
+            }
+        }
+        System.out.println("Evento cancelado!");
     }
     public void listarEventosAgendados(){
         System.out.println("Eventos Agendados: ");
