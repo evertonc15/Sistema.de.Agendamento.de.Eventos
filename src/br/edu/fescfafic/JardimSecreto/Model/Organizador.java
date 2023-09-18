@@ -12,10 +12,12 @@ public class Organizador {
         this.email = email;
     }
     public void exibirInfo(){
+        System.out.println("_____________ORGANIZADORES_______________");
         System.out.println("Nome: " + this.nome);
         System.out.println(("ID: " + this.id));
         System.out.println("E-mail: " + this.email);
         System.out.println("Eventos organizados: " + eventosOrganizados.length);
+        System.out.println("_________________________________________");
     };
 
 }
