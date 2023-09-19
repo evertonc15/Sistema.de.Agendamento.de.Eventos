@@ -22,12 +22,14 @@ public class Calendario {
 
     public void exibirEventos(){
         for(int i = 0; i < quantidadeDeEventosAgendados; i++){
-            System.out.println("\n" + eventosAgendados[i].nomeDoEvento);
-            System.out.println(eventosAgendados[i].idDoEvento);
-            System.out.println(eventosAgendados[i].dataDoEvento);
-            System.out.println(eventosAgendados[i].horaDoEvento);
-            System.out.println(eventosAgendados[i].localDoEvento);
-            System.out.println(eventosAgendados[i].capacidadeTotalDoEvento);
+            if(eventosAgendados[i] != null) {
+                System.out.println("\n" + eventosAgendados[i].nomeDoEvento);
+                System.out.println(eventosAgendados[i].idDoEvento);
+                System.out.println(eventosAgendados[i].dataDoEvento);
+                System.out.println(eventosAgendados[i].horaDoEvento);
+                System.out.println(eventosAgendados[i].localDoEvento);
+                System.out.println(eventosAgendados[i].capacidadeTotalDoEvento);
+            }
         }if(quantidadeDeEventosAgendados < 1){
             System.out.println("Não temos eventos agendados");
         }
@@ -58,7 +60,9 @@ public class Calendario {
 
     public void verificarDisponibilidade(){
         for(int i = 0; i < quantidadeDeEventosAgendados; i++){
-            System.out.println("Data indisponivel - " + eventosAgendados[i].dataDoEvento);
+            if (eventosAgendados[i] != null) {
+                System.out.println("Data indisponivel - " + eventosAgendados[i].dataDoEvento);
+            }
         }
     }
 }
