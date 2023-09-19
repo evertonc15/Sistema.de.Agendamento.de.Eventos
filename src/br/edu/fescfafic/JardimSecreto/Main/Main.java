@@ -38,7 +38,6 @@ public class Main {
 
         Calendario calendario = new Calendario(5);
         //calendario.inserirEvento(evento);
-        calendario.inserirEvento(evento1);
         calendario.verificarDisponibilidade(evento1);
 //        System.out.println("+++++++++++++++++++++");
 //        calendario.cancelarEvento(evento);
