@@ -43,11 +43,9 @@ public class Main {
         reserva2.exibirInfo();
 
         Calendario calendario = new Calendario();
-        calendario.inserirEvento(despedidaDeSolteiro);
         calendario.inserirEvento(casamentoDoKokin);
-
-
-
+        calendario.inserirEvento(despedidaDeSolteiro);
+        calendario.cancelarEvento(2);
 
 
     }

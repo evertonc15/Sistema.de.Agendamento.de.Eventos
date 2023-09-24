@@ -22,7 +22,7 @@ public class Evento {
 
    }
        public void exibirInfo(){
-           System.out.println("__________________EVENTOS____________________");
+           System.out.println("__________________EVENTO____________________");
            System.out.println("ID do Evento: " + this.idDoEvento);
            System.out.println("Nome do Evento: " + this.nomeDoEvento);
            System.out.println("Data: " + this.dataEvento);

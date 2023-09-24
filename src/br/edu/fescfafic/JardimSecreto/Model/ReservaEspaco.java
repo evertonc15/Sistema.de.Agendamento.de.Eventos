@@ -17,7 +17,7 @@ public class ReservaEspaco {
         this.localDoEvento = localDoEvento;
     }
     public void exibirInfo(){
-        System.out.println("_____________AGENDAMENTOS_______________");
+        System.out.println("_____________AGENDAMENTO_______________");
         System.out.println("Nome do Organizador: " + this.nome.nome);
         System.out.println("Nome do Evento: " + this.nomeDoEvento.nomeDoEvento);
         System.out.println("ID do Evento: " + this.idDoevento.idDoEvento);

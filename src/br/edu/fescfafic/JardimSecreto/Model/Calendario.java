@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 public class Calendario {
     public Evento[] eventosAgendados = new Evento[4];
+    public ReservaEspaco eventoExcluido;
 
 
     public void inserirEvento(Evento evento) {
@@ -28,9 +29,19 @@ public class Calendario {
         }
         return true;
     }
+
+    public void cancelarEvento(int id){
+        for(int i = 0; i < eventosAgendados.length; i++){
+            if(this.eventosAgendados[i].idDoEvento == id){
+                this.eventosAgendados[i].exibirInfo();
+                this.eventosAgendados[i] = null;
+                System.out.println("Evento removido");
+                break;
+            }
+
+        }
+    }
 }
-
-
 
 
 
