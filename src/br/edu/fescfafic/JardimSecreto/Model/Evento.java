@@ -5,19 +5,18 @@ import java.util.Date;
 
 public class Evento {
     public int idDoEvento;
+    public String organizadorDoEvento;
     public String nomeDoEvento;
     public LocalDate dataDoEvento;
     public LocalTime horaDoEvento;
     public String localDoEvento;
-    //public int[] capacidadeDeParticipantes;
-    //public int participantesRegistrados;
-    public Evento(int id, String nomeDoEvento, LocalDate data, LocalTime hora, String local){
+    public Evento(int id, String orgDoEvento, String nomeDoEvento, LocalDate data, LocalTime hora, String local){
         this.idDoEvento = id;
+        this.organizadorDoEvento = orgDoEvento;
         this.nomeDoEvento = nomeDoEvento;
         this.dataDoEvento = data;
         this.horaDoEvento = hora;
         this.localDoEvento = local;
-        //this.capacidadeDeParticipantes = new int[participantesRegistrados];
     }
     public void exibirInfo(){
         System.out.printf("ID: %s", this.idDoEvento);
@@ -25,6 +24,5 @@ public class Evento {
         System.out.printf("\nData: %s", this.dataDoEvento);
         System.out.printf("\nHora: %s", this.horaDoEvento);
         System.out.printf("\nLocal: %s", this.localDoEvento);
-        //System.out.printf("\nTotal de partipantes: %s", this.participantesRegistrados);
     }
 }

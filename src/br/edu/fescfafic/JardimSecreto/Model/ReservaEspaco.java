@@ -5,11 +5,11 @@ public class ReservaEspaco  {
     public Evento evento;
     public LocalDate dataReserva;
     public String espacoReservado;
-    public ReservaEspaco(Organizador organizador, Evento evento, LocalDate dataReserva, String espacoReservado){
+    public ReservaEspaco(Organizador organizador, Evento evento){
         this.organizador = organizador;
         this.evento = evento;
-        this.dataReserva = dataReserva;
-        this.espacoReservado = espacoReservado;
+        this.dataReserva = evento.dataDoEvento;
+        this.espacoReservado = evento.localDoEvento;
     }
     public void exibirInfo(){
         System.out.printf("\nOrganizador do Evento: %s",this.organizador.nome);
