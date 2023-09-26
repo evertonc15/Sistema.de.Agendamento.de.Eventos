@@ -1,6 +1,6 @@
 package br.edu.fescfafic.JardimSecreto.Model;
 
-import java.time.LocalDate;
+//import java.time.LocalDate;
 
 public class Calendario {
     public Evento[] eventosAgendados = new Evento[10];
@@ -16,7 +16,7 @@ public class Calendario {
                     quantidadeDeEventosAgendados++;
                     System.out.println("\nEvento cadastrado com sucesso.");
                 } else {
-                    System.out.println("\nO Organizador não tem mais espacos para eventos");
+                    System.out.println("\nO Organizador nao tem mais espacos para eventos");
                 }
             } else {
                 System.out.println("\nLimite de eventos agendados");
@@ -36,7 +36,7 @@ public class Calendario {
             }
         }if(quantidadeDeEventosAgendados < 1){
             System.out.println("=".repeat(40));
-            System.out.println("Não temos eventos agendados");
+            System.out.println("Nao temos eventos agendados");
             System.out.println("=".repeat(40));
         }
 
@@ -63,7 +63,7 @@ public class Calendario {
             }
         }
         if(!eventoEncontrado){
-            System.out.print("Evento não encontrado, não podemos cancelar");
+            System.out.print("Evento nao encontrado, nao podemos cancelar");
         }
 
     }

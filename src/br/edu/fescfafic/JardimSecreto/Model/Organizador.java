@@ -33,7 +33,7 @@ public class Organizador {
             }
         }if(quantidadDeEventosDoOrganizador < 1){
             System.out.println("=".repeat(40));
-            System.out.println("O organizador não tem eventos agendados");
+            System.out.println("O organizador nao tem eventos agendados");
         }
     }
 }
