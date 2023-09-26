@@ -56,8 +56,7 @@ public class Main {
         calendario.inserirEvento(organizadorEverton, evento1);
         //calendario.verificarDisponibilidade(evento1);
         calendario.exibirInfo();
-        calendario.cancelarEvento(evento1);
+        calendario.cancelarEvento(organizadorEverton, 154);
         calendario.exibirInfo();
     }
 }
-

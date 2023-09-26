@@ -30,16 +30,22 @@ public class Calendario {
             System.out.println("\nLimite de Eventos Agendados.");
         }
     }
-    public void cancelarEvento(Evento evento){
+    public void cancelarEvento(Organizador organizador, int id){
         for (int i = 0; i < eventosAgendados.length; i++){
-            if (eventosAgendados[i] != null && eventosAgendados[i].idDoEvento == evento.idDoEvento){
-                Evento excluir = eventosAgendados[i];
+            if (eventosAgendados[i] != null && eventosAgendados[i].idDoEvento == id){
                 eventosAgendados[i] = null;
-                System.out.println("__________ Evento Cancelado __________");
-                System.out.printf("\nNome do Evento: %s", excluir.nomeDoEvento);
-                System.out.printf("\nData do Evento: %s", excluir.dataDoEvento);
-                System.out.println("\n______________________________________");
-                break;
+                numEventosAgendados--;
+                for (int j = 0; j < organizador.eventosOrganizados.length; j++){
+                    if (organizador.eventosOrganizados[j] != null && id == organizador.eventosOrganizados[j].idDoEvento){
+                        System.out.println("__________ Evento Cancelado __________");
+                        System.out.printf("\nNome do Evento: %s", organizador.eventosOrganizados[j].nomeDoEvento);
+                        System.out.printf("\nData do Evento: %s", organizador.eventosOrganizados[j].dataDoEvento);
+                        System.out.println("\n______________________________________");
+                        organizador.eventosOrganizados[j] = null;
+                        organizador.quantidadeDeEventosOrganizados--;
+                        break;
+                    }
+                }
             }
         }
     }
