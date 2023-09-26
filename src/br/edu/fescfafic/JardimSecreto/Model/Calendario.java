@@ -1,58 +1,60 @@
 package br.edu.fescfafic.JardimSecreto.Model;
 
 public class Calendario {
-    public Evento[] listaDeEventosAgendados = new Evento[10];
+    public Evento[] eventosAgendados = new Evento[10];
     public int numEventosAgendados = 0;
-
-    public boolean verificarDisponibilidade(Evento evento) {
-        boolean disponibilidade = false;
-        for (int i = 0; i < listaDeEventosAgendados.length; i++) {
-            if (listaDeEventosAgendados[i] != null && listaDeEventosAgendados[i].dataDoEvento == evento.dataDoEvento) {
-                System.out.println("\nEsta data esta indisponiel!");
-                disponibilidade = true;
+    public boolean verificarDisponibilidade(Evento evento){
+        boolean disponivel = false;
+        for (int i = 0; i < eventosAgendados.length; i++){
+            if (eventosAgendados[i] != null && eventosAgendados[i].dataDoEvento.equals(evento.dataDoEvento)){
+                disponivel = true;
+                System.out.println("\nData insdiponivel.");
             }
         }
-        return disponibilidade;
+        return disponivel;
     }
-    public void inserirEvento(Evento evento, Organizador organizador) {
+    public void inserirEvento(Organizador organizador, Evento evento){
         if (!verificarDisponibilidade(evento)){
-            if (numEventosAgendados < listaDeEventosAgendados.length) {
+            if (numEventosAgendados < eventosAgendados.length){
                 if (organizador.quantidadeDeEventosOrganizados < organizador.eventosOrganizados.length){
                     organizador.eventosOrganizados[organizador.quantidadeDeEventosOrganizados] = evento;
                     organizador.quantidadeDeEventosOrganizados++;
-                    listaDeEventosAgendados[numEventosAgendados] = evento;
+                    eventosAgendados[numEventosAgendados] = evento;
                     numEventosAgendados++;
                     System.out.println("\nEvento cadastrado com sucesso.");
                 }else {
-                    System.out.println("\nOrganizador nao pode ter mais eventos registrados.");
+                    System.out.println("\nOrganizador nao pode fazer mais eventos.");
                 }
-            } else {
-                System.out.println("Calendario esta lotado!");
+            }
+        }else {
+            System.out.println("\nLimite de Eventos Agendados.");
+        }
+    }
+    public void cancelarEvento(Evento evento){
+        for (int i = 0; i < eventosAgendados.length; i++){
+            if (eventosAgendados[i] != null && eventosAgendados[i].idDoEvento == evento.idDoEvento){
+                Evento excluir = eventosAgendados[i];
+                eventosAgendados[i] = null;
+                System.out.println("__________ Evento Cancelado __________");
+                System.out.printf("\nNome do Evento: %s", excluir.nomeDoEvento);
+                System.out.printf("\nData do Evento: %s", excluir.dataDoEvento);
+                System.out.println("\n______________________________________");
+                break;
             }
         }
     }
-    public void cancelarEvento(Organizador organizador, int id){
-        boolean encontrou = false;
-        for (int i = 0; i < listaDeEventosAgendados.length; i++){
-            if (id == listaDeEventosAgendados[i].idDoEvento && organizador.nome.equalsIgnoreCase(listaDeEventosAgendados[i].organizadorDoEvento)){
-                encontrou = true;
-                listaDeEventosAgendados[i] = null;
-                numEventosAgendados--;
-                System.out.println("\nEvento cancelado!");
-            }
-        }if (!encontrou){
-            System.out.println("\nEvento não encontrado.");
-        }
-    }
-    public void listarEventosAgendados(){
-        System.out.println("\nEventos Agendados: ");
+    public void exibirInfo(){
         for (int i = 0; i < numEventosAgendados; i++){
-            Evento evento = listaDeEventosAgendados[i];
-            System.out.printf("ID: %s", evento.idDoEvento);
-            System.out.printf("\nNome do Evento: %s", evento.nomeDoEvento);
-            System.out.printf("\nData: %s", evento.dataDoEvento);
-            System.out.printf("\nHora: %s", evento.horaDoEvento);
-            System.out.printf("\nLocal: %s", evento.localDoEvento);
+            if (eventosAgendados[i] != null){
+                System.out.println("__________ Eventos Agendados __________");
+                System.out.printf("ID: %s", this.eventosAgendados[i].idDoEvento);
+                System.out.printf("\nNome do Evento: %s", this.eventosAgendados[i].nomeDoEvento);
+                System.out.printf("\nData do Evento: %s", this.eventosAgendados[i].dataDoEvento);
+                System.out.printf("\nHora do Evento: %s", this.eventosAgendados[i].horaDoEvento);
+                System.out.printf("\nLocal do Evento: %s", this.eventosAgendados[i].localDoEvento);
+                System.out.println("\n_______________________________________");
+            }
         }
+
     }
 }

@@ -1,7 +1,6 @@
 package br.edu.fescfafic.JardimSecreto.Model;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Date;
 
 public class Evento {
     public int idDoEvento;
@@ -10,19 +9,23 @@ public class Evento {
     public LocalDate dataDoEvento;
     public LocalTime horaDoEvento;
     public String localDoEvento;
-    public Evento(int id, String orgDoEvento, String nomeDoEvento, LocalDate data, LocalTime hora, String local){
+
+    public Evento(int id, String orgDoEvento,String nome, LocalDate data, LocalTime hora, String local){
         this.idDoEvento = id;
         this.organizadorDoEvento = orgDoEvento;
-        this.nomeDoEvento = nomeDoEvento;
+        this.nomeDoEvento = nome;
         this.dataDoEvento = data;
         this.horaDoEvento = hora;
         this.localDoEvento = local;
     }
     public void exibirInfo(){
-        System.out.printf("ID: %s", this.idDoEvento);
+        System.out.println("__________ Dados do Evento __________");
+        System.out.printf("ID: %d", this.idDoEvento);
+        System.out.printf("\nOrganizador: %s", this.organizadorDoEvento);
         System.out.printf("\nNome do Evento: %s", this.nomeDoEvento);
-        System.out.printf("\nData: %s", this.dataDoEvento);
-        System.out.printf("\nHora: %s", this.horaDoEvento);
-        System.out.printf("\nLocal: %s", this.localDoEvento);
+        System.out.printf("\nData do Evento: %s", this.dataDoEvento);
+        System.out.printf("\nHora do Evento: %s", this.horaDoEvento);
+        System.out.printf("\nLocal do Evento: %s", this.localDoEvento);
+        System.out.println("\n_____________________________________");
     }
 }
