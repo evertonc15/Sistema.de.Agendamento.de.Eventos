@@ -1,7 +1,5 @@
 package br.edu.fescfafic.JardimSecreto.Model;
 
-import java.time.temporal.Temporal;
-
 public class Organizador {
     public String nomedoOrganizador;
     public int id;
@@ -16,8 +14,23 @@ public class Organizador {
     }
 
     public void exibirInfo(){
-        System.out.printf("\nNome - %s", nomedoOrganizador);
+        System.out.println("=".repeat(40));
+        System.out.printf("Nome - %s", nomedoOrganizador);
         System.out.printf("\nID - %d", id);
-        System.out.printf("\nEmail - %s", email);
+        System.out.printf("\nEmail - %s\n", email);
+        System.out.println("=".repeat(40));
+    }
+
+    public void exibirEventosOrganizador(Organizador org){
+        for(int i = 0; i < eventosOrganizados.length; i++){
+            if(org.eventosOrganizados[i] != null) {
+                System.out.println("=".repeat(40));
+                System.out.println(org.eventosOrganizados[i].nomeDoEvento);
+                System.out.println(org.eventosOrganizados[i].idDoEvento);
+                System.out.println(org.eventosOrganizados[i].dataDoEvento);
+                System.out.println(org.eventosOrganizados[i].horaDoEvento);
+                System.out.println(org.eventosOrganizados[i].localDoEvento);
+            }
+        }
     }
 }
