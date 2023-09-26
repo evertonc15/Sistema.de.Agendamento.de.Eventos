@@ -51,9 +51,13 @@ public class Calendario {
                 quantidadeDeEventosAgendados--;
                 for (int j = 0; j < org.eventosOrganizados.length; j++) {
                     if(org.eventosOrganizados[j] != null && id == org.eventosOrganizados[j].idDoEvento) {
+                        System.out.println("=".repeat(40));
+                        System.out.printf("\nNome do Evento: %s", org.eventosOrganizados[j].nomeDoEvento);
+                        System.out.printf("\nData do Evento: %s", org.eventosOrganizados[j].dataDoEvento);
+                        System.out.println("\nEvento cancelado com sucesso");
+                        System.out.println("=".repeat(40));
                         org.eventosOrganizados[j] = null;
                         org.quantidadDeEventosDoOrganizador--;
-                        System.out.println("\nEvento cancelado com sucesso");
                     }
                 }
             }

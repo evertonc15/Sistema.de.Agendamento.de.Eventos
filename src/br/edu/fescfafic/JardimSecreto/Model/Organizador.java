@@ -22,7 +22,7 @@ public class Organizador {
     }
 
     public void exibirEventosOrganizador(Organizador org){
-        for(int i = 0; i < quantidadDeEventosDoOrganizador; i++){
+        for(int i = 0; i < eventosOrganizados.length; i++){
             if(org.eventosOrganizados[i] != null) {
                 System.out.println("=".repeat(40));
                 System.out.println(org.eventosOrganizados[i].nomeDoEvento);
@@ -31,10 +31,6 @@ public class Organizador {
                 System.out.println(org.eventosOrganizados[i].horaDoEvento);
                 System.out.println(org.eventosOrganizados[i].localDoEvento);
             }
-        }if(quantidadDeEventosDoOrganizador < 1){
-            System.out.println("=".repeat(40));
-            System.out.println("O organizador não tem eventos agendados");
-            System.out.println("=".repeat(40));
         }
     }
 }
