@@ -20,20 +20,4 @@ public class Organizador {
         System.out.printf("\nEmail - %s\n", email);
         System.out.println("=".repeat(40));
     }
-
-    public void exibirEventosOrganizador(Organizador org){
-        for(int i = 0; i < eventosOrganizados.length; i++){
-            if(org.eventosOrganizados[i] != null) {
-                System.out.println("=".repeat(40));
-                System.out.println(org.eventosOrganizados[i].nomeDoEvento);
-                System.out.println(org.eventosOrganizados[i].idDoEvento);
-                System.out.println(org.eventosOrganizados[i].dataDoEvento);
-                System.out.println(org.eventosOrganizados[i].horaDoEvento);
-                System.out.println(org.eventosOrganizados[i].localDoEvento);
-            }
-        }if(quantidadDeEventosDoOrganizador < 1){
-            System.out.println("=".repeat(40));
-            System.out.println("O organizador nao tem eventos agendados");
-        }
-    }
 }

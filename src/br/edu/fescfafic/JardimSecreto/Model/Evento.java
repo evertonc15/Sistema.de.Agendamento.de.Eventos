@@ -22,6 +22,6 @@ public class Evento {
         System.out.printf("\nNome do Evento - %s", nomeDoEvento);
         System.out.printf("\nData do Evento - %s", dataDoEvento);
         System.out.printf("\nHora do Evento - %s", horaDoEvento);
-        System.out.printf("\nLocal do Evento - %s", localDoEvento);
+        System.out.printf("\nLocal do Evento - %s\n", localDoEvento);
     }
 }
